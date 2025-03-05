@@ -3,88 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thả Thính</title>
+    <title>Yêu thương</title>
     <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-            margin-top: 50px;
+            background-color: #ffdde1;
+            padding-top: 50px;
         }
-        .btn {
-            padding: 10px 20px;
-            font-size: 18px;
-            margin: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-        }
-        .yes {
-            background-color: #ff4d4d;
-            color: white;
-        }
-        .no {
-            background-color: #808080;
-            color: white;
-        }
-        .effect {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .hidden {
+        #message, #gif {
             display: none;
-        }
-        .image-container {
             margin-top: 20px;
         }
-        .image-container img {
-            width: 150px;
-            height: auto;
+        button {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: #ff1e4d;
         }
     </style>
 </head>
 <body>
-    <h2>Cho a Thái triệu cớm được hong?</h2>
-    <button id="yes-btn" class="btn yes" onclick="showLove()">Có</button>
-    <button id="no-btn" class="btn no" onclick="showSad()">Không</button>
-    
-    <div id="effect-container"></div>
+    <h1>Tình yêu của a dậy rồi à? 🥰</h1>
+    <button onclick="showMessage()">Dạ</button>
+    <div id="message">Chúc ny anh ngày mới vui vẻ, dậy ăn sáng và đi lớp nhó ❤️</div>
+    <div id="gif">
+        <img src="https://i.pinimg.com/originals/4d/90/d6/4d90d6508c4d8c6a65a213ecf49f5f02.gif" alt="Cute GIF">
+    </div>
     
     <script>
-        function showLove() {
-            let container = document.getElementById('effect-container');
-            container.innerHTML = `
-                <div class="effect">
-                    <p>Anh yêu Phương siu nhiều luôn ❤️</p>
-                    <div class="image-container">
-                        <img src="https://i.pinimg.com/originals/c3/bb/4d/c3bb4d7ea3365dce2df03e17e659d058.gif" alt="Hearts">
-                    </div>
-                </div>
-            `;
-            document.getElementById("yes-btn").disabled = false;
-            document.getElementById("no-btn").disabled = false;
-        }
-
-        function showSad() {
-            let container = document.getElementById('effect-container');
-            container.innerHTML = `
-                <div class="effect">
-                    <p>Dỗi 1 tuần á 😢</p>
-                    <div class="image-container">
-                        <img src="https://i.pinimg.com/originals/16/45/85/1645855edeacd5d563a87c3092566ea9.gif" alt="Sad Face">
-                    </div>
-                </div>
-            `;
-            document.getElementById("yes-btn").disabled = false;
-            document.getElementById("no-btn").disabled = false;
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("gif").style.display = "block";
+            }, 1000);
         }
     </script>
 </body>
